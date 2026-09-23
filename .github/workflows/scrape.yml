@@ -18,10 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 4
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       # De data staat op een eigen branch, zodat main schoon blijft
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: data
           path: data
