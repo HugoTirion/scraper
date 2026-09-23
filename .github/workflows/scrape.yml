@@ -7,7 +7,7 @@ on:
   workflow_dispatch: {}        # handmatig starten via de Actions-tab
 
 permissions:
-  contents: write              # nodig om data terug te committen
+  contents: write              # nodig om data terug te committen en releases te maken
 
 concurrency:
   group: scrape
@@ -20,14 +20,61 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # De data staat op een eigen branch, zodat main schoon blijft
+      - uses: actions/checkout@v4
+        with:
+          ref: data
+          path: data
+
       - name: Scrape
         run: python3 scrape.py
 
-      - name: Commit & push
+      # Afgesloten maanden: zip -> release (+ mail) -> uit de data-branch halen
+      - name: Pak afgesloten maanden in
+        id: pack
+        run: echo "months=$(python3 archive.py pack)" >> "$GITHUB_OUTPUT"
+
+      - name: Zet archief in release
+        if: steps.pack.outputs.months != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MONTHS: ${{ steps.pack.outputs.months }}
         run: |
+          for m in $MONTHS; do
+            gh release create "data-$m" "archive/ovfiets_$m.zip" --target main \
+              --title "OV-fiets data $m" --notes "Change log, scrape log en locatiekenmerken van $m." \
+            || gh release upload "data-$m" "archive/ovfiets_$m.zip" --clobber
+          done
+
+      - name: Mail archief
+        if: steps.pack.outputs.months != ''
+        continue-on-error: true    # de release bestaat al; een mislukte mail mag het opruimen niet tegenhouden
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM }}
+        run: python3 archive.py mail ${{ steps.pack.outputs.months }}
+
+      - name: Commit & push
+        env:
+          ARCHIVED: ${{ steps.pack.outputs.months }}
+        run: |
+          if [ -n "$ARCHIVED" ]; then python3 archive.py prune $ARCHIVED; fi
+          cd data
           git config user.name  "ovfiets-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data
+          if [ -n "$ARCHIVED" ]; then
+            # Nieuwe branch-geschiedenis beginnen, zodat oude maanden ook uit de git-historie verdwijnen
+            git checkout --orphan fresh
+            git add -A
+            git commit -m "reset na archivering $ARCHIVED ($(date -u +%Y-%m-%dT%H:%MZ))"
+            git push --force origin fresh:data
+            exit 0
+          fi
+          git add -A
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "data $(date -u +%Y-%m-%dT%H:%MZ)"
           git pull --rebase --quiet

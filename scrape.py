@@ -3,9 +3,9 @@
 Scrapet http://fiets.openov.nl/locaties.json en logt alleen WIJZIGINGEN
 in beschikbaarheid per locatie (change log). Alleen standaardbibliotheek.
 
-Output (map data/):
+Output (map data/; in GitHub staat die op de branch `data`):
   changes/YYYY-MM.csv   een rij per locatie waarvan rentalBikes of open-status veranderde
-  scrapes.csv           een rij per scrape-poging (dekking/gaten controleren)
+  scrapes/YYYY-MM.csv   een rij per scrape-poging (dekking/gaten controleren)
   locaties_meta.csv     statische kenmerken per locatie (overschreven, wijzigt zelden)
   state.json            laatst bekende stand per locatie (nodig voor change-detectie)
 """
@@ -48,7 +48,7 @@ def append_csv(path: Path, header: list, rows: list) -> None:
 def main() -> None:
     now = datetime.now(timezone.utc)
     ts = now.strftime("%Y-%m-%dT%H:%M:%SZ")
-    scrape_log = DATA / "scrapes.csv"
+    scrape_log = DATA / "scrapes" / f"{now:%Y-%m}.csv"
     scrape_header = ["scrape_ts_utc", "status", "n_locations", "n_changes", "max_fetch_time", "error"]
 
     try:
