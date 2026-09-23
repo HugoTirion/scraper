@@ -29,6 +29,7 @@ try {
         foreach ($a in $r.assets | Where-Object { $_.name -like '*.zip' }) {
             $zip = Join-Path $tmp $a.name
             Invoke-WebRequest -UseBasicParsing $a.browser_download_url -OutFile $zip
+            Unblock-File $zip   # "van internet"-markering niet meenemen naar de uitgepakte bestanden
             Expand-Archive -Force $zip $Dest
         }
         Add-Content -Path $done -Value $r.tag_name -Encoding utf8
@@ -38,13 +39,23 @@ try {
     # 2. Lopende maand uit de data-branch
     $zip = Join-Path $tmp 'data.zip'
     Invoke-WebRequest -UseBasicParsing "https://codeload.github.com/$repo/zip/refs/heads/data" -OutFile $zip
+    Unblock-File $zip
     Expand-Archive -Force $zip $tmp
-    $src = Get-ChildItem $tmp -Directory | Select-Object -First 1
-    Copy-Item -Recurse -Force (Join-Path $src.FullName '*') $Dest
+    $src = (Get-ChildItem $tmp -Directory | Select-Object -First 1).FullName
+    # Per bestand kopieren, zodat lokale bestanden die niet meer op GitHub staan blijven bestaan
+    foreach ($f in Get-ChildItem -Recurse -File $src | Where-Object { $_.Name -notlike '.git*' }) {
+        $target = Join-Path $Dest $f.FullName.Substring($src.Length + 1)
+        New-Item -ItemType Directory -Force (Split-Path $target) | Out-Null
+        # Virusscanner/indexering houdt een bestand soms even vast ("Access denied"): paar keer opnieuw proberen
+        for ($i = 1; ; $i++) {
+            try { Copy-Item -Force $f.FullName $target; break }
+            catch { if ($i -ge 5) { throw }; Start-Sleep -Seconds (3 * $i) }
+        }
+    }
     Log 'data-branch gesynct'
 }
 catch {
-    Log "FOUT: $($_.Exception.Message)"   # bv. geen internet; volgende run probeert opnieuw
+    Log "FOUT (regel $($_.InvocationInfo.ScriptLineNumber)): $($_.Exception.Message)"   # bv. geen internet; volgende run probeert opnieuw
     exit 1
 }
 finally {
