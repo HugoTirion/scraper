@@ -68,16 +68,17 @@ jobs:
           cd data
           git config user.name  "ovfiets-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # GitHub geeft soms kortstondig "Internal Server Error" op een push: tot 5x opnieuw proberen
+          retry() { for i in 1 2 3 4 5; do "$@" && return 0; echo "poging $i mislukt, opnieuw"; sleep $((i * 5)); done; return 1; }
           if [ -n "$ARCHIVED" ]; then
             # Nieuwe branch-geschiedenis beginnen, zodat oude maanden ook uit de git-historie verdwijnen
             git checkout --orphan fresh
             git add -A
             git commit -m "reset na archivering $ARCHIVED ($(date -u +%Y-%m-%dT%H:%MZ))"
-            git push --force origin fresh:data
+            retry git push --force origin fresh:data
             exit 0
           fi
           git add -A
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "data $(date -u +%Y-%m-%dT%H:%MZ)"
-          git pull --rebase --quiet
-          git push
+          retry sh -c 'git pull --rebase --quiet && git push'
