@@ -53,6 +53,12 @@ try {
         }
     }
     Log 'data-branch gesynct'
+
+    # Signaleren als de scraper stilvalt (bv. cron-job.org gestopt of token verlopen)
+    $scrapeLog = Get-ChildItem (Join-Path $Dest 'scrapes') -Filter '*.csv' | Sort-Object Name | Select-Object -Last 1
+    $last = (Get-Content $scrapeLog.FullName -Tail 1).Split(',')[0]
+    $age = [int]((Get-Date).ToUniversalTime() - [datetime]::Parse($last).ToUniversalTime()).TotalMinutes
+    if ($age -gt 30) { Log "WAARSCHUWING: laatste scrape $age minuten geleden ($last)" }
 }
 catch {
     Log "FOUT (regel $($_.InvocationInfo.ScriptLineNumber)): $($_.Exception.Message)"   # bv. geen internet; volgende run probeert opnieuw
