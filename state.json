@@ -36,7 +36,7 @@
 "open": "Unknown"
 },
 "DRON001": {
-"bikes": "13",
+"bikes": "12",
 "open": "Yes"
 },
 "Dz001": {
@@ -204,15 +204,15 @@
 "open": "Yes"
 },
 "apn001": {
-"bikes": "51",
+"bikes": "50",
 "open": "Yes"
 },
 "asa001": {
-"bikes": "194",
+"bikes": "195",
 "open": "Yes"
 },
 "asb002": {
-"bikes": "30",
+"bikes": "29",
 "open": "Yes"
 },
 "asd002": {
@@ -220,7 +220,7 @@
 "open": "No"
 },
 "asd008": {
-"bikes": "342",
+"bikes": "343",
 "open": "Yes"
 },
 "asd009": {
@@ -240,7 +240,7 @@
 "open": "Yes"
 },
 "asdz001": {
-"bikes": "236",
+"bikes": "237",
 "open": "Yes"
 },
 "asdz003": {
@@ -252,7 +252,7 @@
 "open": "Yes"
 },
 "ass001": {
-"bikes": "154",
+"bikes": "155",
 "open": "Yes"
 },
 "atn001": {
@@ -281,7 +281,7 @@
 },
 "bgn002": {
 "bikes": "27",
-"open": "Yes"
+"open": "No"
 },
 "bhv002": {
 "bikes": "46",
@@ -368,7 +368,7 @@
 "open": "Yes"
 },
 "db001": {
-"bikes": "146",
+"bikes": "145",
 "open": "Yes"
 },
 "db002": {
@@ -420,7 +420,7 @@
 "open": "Yes"
 },
 "dt002": {
-"bikes": "337",
+"bikes": "338",
 "open": "Yes"
 },
 "dtc001": {
@@ -528,7 +528,7 @@
 "open": "Yes"
 },
 "gn001": {
-"bikes": "103",
+"bikes": "107",
 "open": "Yes"
 },
 "gn004": {
@@ -604,7 +604,7 @@
 "open": "Yes"
 },
 "hil001": {
-"bikes": "10",
+"bikes": "11",
 "open": "Yes"
 },
 "hk001": {
@@ -736,7 +736,7 @@
 "open": "Yes"
 },
 "ledn001": {
-"bikes": "258",
+"bikes": "259",
 "open": "Yes"
 },
 "ledn002": {
@@ -900,7 +900,7 @@
 "open": "Yes"
 },
 "rsw002": {
-"bikes": "9",
+"bikes": "10",
 "open": "Yes"
 },
 "rta001": {
@@ -969,14 +969,14 @@
 },
 "swk002": {
 "bikes": "8",
-"open": "Yes"
+"open": "No"
 },
 "tb002": {
 "bikes": "29",
 "open": "Yes"
 },
 "tb003": {
-"bikes": "187",
+"bikes": "188",
 "open": "Yes"
 },
 "tbg001": {
@@ -1000,11 +1000,11 @@
 "open": "Yes"
 },
 "ut016": {
-"bikes": "614",
+"bikes": "615",
 "open": "Yes"
 },
 "ut020": {
-"bikes": "891",
+"bikes": "893",
 "open": "Yes"
 },
 "ut021": {
@@ -1136,7 +1136,7 @@
 "open": "Unknown"
 },
 "wp001": {
-"bikes": "44",
+"bikes": "43",
 "open": "Yes"
 },
 "wp901": {
