@@ -1,11 +1,8 @@
 name: scrape-ov-fiets
 
 on:
-  schedule:
-    # Elke 5 min, maar op minuut 3, 8, 13, ... om de piekdrukte op het hele uur te ontwijken.
-    # GitHub slaat geplande runs bij drukte vaak over (gaten van uren), dus dit is alleen een vangnet.
-    - cron: "3-58/5 * * * *"
-  # De echte 5-minutentrigger: cron-job.org doet elke 5 min een POST naar
+  # Geen GitHub-schedule: die sloeg runs bij drukte over (gaten van uren).
+  # De 5-minutentrigger is cron-job.org, dat elke 5 min een POST doet naar
   # https://api.github.com/repos/HugoTirion/scraper/actions/workflows/scrape.yml/dispatches
   # met body {"ref":"main"} en een fine-grained token (alleen deze repo, Actions: read and write).
   # Ook handmatig te starten via de Actions-tab.
