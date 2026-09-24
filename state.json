@@ -116,7 +116,7 @@
 "open": "Yes"
 },
 "UTVR001": {
-"bikes": "68",
+"bikes": "70",
 "open": "Yes"
 },
 "Vdm001": {
@@ -140,7 +140,7 @@
 "open": "Yes"
 },
 "ZD002": {
-"bikes": "43",
+"bikes": "42",
 "open": "Yes"
 },
 "Zh001": {
@@ -160,7 +160,7 @@
 "open": "Unknown"
 },
 "ah001": {
-"bikes": "417",
+"bikes": "419",
 "open": "Yes"
 },
 "ah003": {
@@ -172,7 +172,7 @@
 "open": "Yes"
 },
 "amf001": {
-"bikes": "236",
+"bikes": "237",
 "open": "Yes"
 },
 "amf002": {
@@ -200,7 +200,7 @@
 "open": "Yes"
 },
 "apd001": {
-"bikes": "347",
+"bikes": "346",
 "open": "Yes"
 },
 "apn001": {
@@ -216,11 +216,11 @@
 "open": "Yes"
 },
 "asd002": {
-"bikes": "152",
+"bikes": "153",
 "open": "Yes"
 },
 "asd008": {
-"bikes": "222",
+"bikes": "223",
 "open": "Yes"
 },
 "asd009": {
@@ -228,11 +228,11 @@
 "open": "Yes"
 },
 "asd010": {
-"bikes": "133",
+"bikes": "136",
 "open": "Yes"
 },
 "asdl001": {
-"bikes": "2",
+"bikes": "1",
 "open": "Yes"
 },
 "asdm001": {
@@ -248,11 +248,11 @@
 "open": "Yes"
 },
 "asn001": {
-"bikes": "160",
+"bikes": "163",
 "open": "Yes"
 },
 "ass001": {
-"bikes": "94",
+"bikes": "93",
 "open": "Yes"
 },
 "atn001": {
@@ -280,7 +280,7 @@
 "open": "Yes"
 },
 "bgn002": {
-"bikes": "21",
+"bikes": "22",
 "open": "Yes"
 },
 "bhv002": {
@@ -360,7 +360,7 @@
 "open": "Yes"
 },
 "ck001": {
-"bikes": "10",
+"bikes": "11",
 "open": "Yes"
 },
 "cl003": {
@@ -376,7 +376,7 @@
 "open": "Yes"
 },
 "db003": {
-"bikes": "27",
+"bikes": "28",
 "open": "Yes"
 },
 "ddn001": {
@@ -420,7 +420,7 @@
 "open": "Yes"
 },
 "dt002": {
-"bikes": "244",
+"bikes": "247",
 "open": "Yes"
 },
 "dtc001": {
@@ -476,7 +476,7 @@
 "open": "Yes"
 },
 "ehv002": {
-"bikes": "1",
+"bikes": "2",
 "open": "Yes"
 },
 "ehv003": {
@@ -508,7 +508,7 @@
 "open": "Yes"
 },
 "etn001": {
-"bikes": "8",
+"bikes": "7",
 "open": "Yes"
 },
 "gd001": {
@@ -528,7 +528,7 @@
 "open": "Yes"
 },
 "gn001": {
-"bikes": "38",
+"bikes": "42",
 "open": "Yes"
 },
 "gn004": {
@@ -540,7 +540,7 @@
 "open": "Yes"
 },
 "gr001": {
-"bikes": "2",
+"bikes": "1",
 "open": "Yes"
 },
 "gs003": {
@@ -552,7 +552,7 @@
 "open": "Yes"
 },
 "gvc021": {
-"bikes": "430",
+"bikes": "431",
 "open": "Yes"
 },
 "gvc901": {
@@ -568,7 +568,7 @@
 "open": "Yes"
 },
 "had003": {
-"bikes": "19",
+"bikes": "17",
 "open": "Yes"
 },
 "hd001": {
@@ -616,7 +616,7 @@
 "open": "Yes"
 },
 "hlm002": {
-"bikes": "116",
+"bikes": "114",
 "open": "Yes"
 },
 "hlms001": {
@@ -672,7 +672,7 @@
 "open": "Yes"
 },
 "ht001": {
-"bikes": "258",
+"bikes": "259",
 "open": "Yes"
 },
 "ht002": {
@@ -680,7 +680,7 @@
 "open": "Yes"
 },
 "htn001": {
-"bikes": "56",
+"bikes": "57",
 "open": "Yes"
 },
 "htnc001": {
@@ -688,7 +688,7 @@
 "open": "Yes"
 },
 "hvs001": {
-"bikes": "229",
+"bikes": "230",
 "open": "Yes"
 },
 "hvsp001": {
@@ -736,11 +736,11 @@
 "open": "Yes"
 },
 "ledn001": {
-"bikes": "138",
+"bikes": "137",
 "open": "Yes"
 },
 "ledn002": {
-"bikes": "53",
+"bikes": "55",
 "open": "Yes"
 },
 "lg001": {
@@ -864,7 +864,7 @@
 "open": "Yes"
 },
 "rai001": {
-"bikes": "16",
+"bikes": "18",
 "open": "Yes"
 },
 "rat001": {
@@ -884,7 +884,7 @@
 "open": "Yes"
 },
 "rm001": {
-"bikes": "43",
+"bikes": "44",
 "open": "Yes"
 },
 "rs001": {
@@ -904,7 +904,7 @@
 "open": "Yes"
 },
 "rta001": {
-"bikes": "1",
+"bikes": "2",
 "open": "Yes"
 },
 "rtb001": {
@@ -912,7 +912,7 @@
 "open": "No"
 },
 "rtd001": {
-"bikes": "251",
+"bikes": "252",
 "open": "Yes"
 },
 "rtd906": {
@@ -932,7 +932,7 @@
 "open": "Yes"
 },
 "sdm002": {
-"bikes": "38",
+"bikes": "36",
 "open": "Yes"
 },
 "sdt001": {
@@ -976,7 +976,7 @@
 "open": "Yes"
 },
 "tb003": {
-"bikes": "138",
+"bikes": "139",
 "open": "Yes"
 },
 "tbg001": {
@@ -992,7 +992,7 @@
 "open": "Yes"
 },
 "tl003": {
-"bikes": "20",
+"bikes": "21",
 "open": "Yes"
 },
 "ut007": {
@@ -1000,15 +1000,15 @@
 "open": "Yes"
 },
 "ut016": {
-"bikes": "430",
+"bikes": "433",
 "open": "Yes"
 },
 "ut020": {
-"bikes": "508",
+"bikes": "517",
 "open": "Yes"
 },
 "ut021": {
-"bikes": "61",
+"bikes": "62",
 "open": "Yes"
 },
 "ut901": {
@@ -1120,7 +1120,7 @@
 "open": "Yes"
 },
 "wd001": {
-"bikes": "48",
+"bikes": "47",
 "open": "Yes"
 },
 "wf001": {
