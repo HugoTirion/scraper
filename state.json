@@ -512,7 +512,7 @@
 "open": "Yes"
 },
 "gd001": {
-"bikes": "113",
+"bikes": "111",
 "open": "No"
 },
 "gdg001": {
@@ -525,7 +525,7 @@
 },
 "gerp002": {
 "bikes": "29",
-"open": "Yes"
+"open": "No"
 },
 "gn001": {
 "bikes": "114",
@@ -549,7 +549,7 @@
 },
 "gv001": {
 "bikes": "88",
-"open": "Yes"
+"open": "No"
 },
 "gvc021": {
 "bikes": "552",
@@ -617,7 +617,7 @@
 },
 "hlm002": {
 "bikes": "146",
-"open": "Yes"
+"open": "No"
 },
 "hlms001": {
 "bikes": "5",
