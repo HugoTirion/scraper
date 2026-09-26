@@ -68,7 +68,7 @@
 "open": "Yes"
 },
 "Hto001": {
-"bikes": "7",
+"bikes": "8",
 "open": "Yes"
 },
 "Kpnz002": {
@@ -420,7 +420,7 @@
 "open": "Yes"
 },
 "dt002": {
-"bikes": "284",
+"bikes": "283",
 "open": "Yes"
 },
 "dtc001": {
@@ -736,11 +736,11 @@
 "open": "Yes"
 },
 "ledn001": {
-"bikes": "193",
+"bikes": "194",
 "open": "Yes"
 },
 "ledn002": {
-"bikes": "50",
+"bikes": "51",
 "open": "No"
 },
 "lg001": {
@@ -912,7 +912,7 @@
 "open": "No"
 },
 "rtd001": {
-"bikes": "240",
+"bikes": "241",
 "open": "Yes"
 },
 "rtd906": {
