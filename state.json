@@ -160,7 +160,7 @@
 "open": "Unknown"
 },
 "ah001": {
-"bikes": "439",
+"bikes": "440",
 "open": "Yes"
 },
 "ah003": {
@@ -240,7 +240,7 @@
 "open": "Yes"
 },
 "asdz001": {
-"bikes": "131",
+"bikes": "132",
 "open": "Yes"
 },
 "asdz003": {
@@ -516,7 +516,7 @@
 "open": "No"
 },
 "gdg001": {
-"bikes": "2",
+"bikes": "3",
 "open": "Yes"
 },
 "gdm001": {
@@ -1008,7 +1008,7 @@
 "open": "Yes"
 },
 "ut021": {
-"bikes": "88",
+"bikes": "87",
 "open": "No"
 },
 "ut901": {
